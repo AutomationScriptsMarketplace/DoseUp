@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help & FAQ - DoseUp</title>
+    <meta name="description" content="Get help with DoseUp - Frequently asked questions, tutorials, and troubleshooting guides for your medication reminder app.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💊</text></svg>">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #007AFF;
+            --secondary-color: #5856D6;
+            --success-color: #34C759;
+            --warning-color: #FF9500;
+            --text-primary: #1C1C1E;
+            --text-secondary: #8E8E93;
+            --background: #FFFFFF;
+            --surface: #F2F2F7;
+            --card-background: #FFFFFF;
+            --shadow: rgba(0, 0, 0, 0.1);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --text-primary: #FFFFFF;
+                --text-secondary: #8E8E93;
+                --background: #000000;
+                --surface: #1C1C1E;
+                --card-background: #2C2C2E;
+                --shadow: rgba(255, 255, 255, 0.1);
+            }
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--background);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: var(--card-background);
+            box-shadow: 0 1px 3px var(--shadow);
+            padding: 1rem 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: var(--primary-color);
+        }
+
+        .back-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* Content */
+        main {
+            padding: 3rem 0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Search */
+        .search-section {
+            background: var(--surface);
+            padding: 2rem;
+            border-radius: 16px;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .search-box {
+            width: 100%;
+            max-width: 400px;
+            padding: 12px 16px;
+            border: 2px solid var(--surface);
+            border-radius: 12px;
+            font-size: 1rem;
+            background: var(--card-background);
+            color: var(--text-primary);
+            margin-top: 1rem;
+        }
+
+        .search-box:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        /* Quick Links */
+        .quick-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .quick-link {
+            display: block;
+            background: var(--card-background);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text-primary);
+            box-shadow: 0 2px 8px var(--shadow);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .quick-link:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .quick-link-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .quick-link h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .quick-link p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* FAQ Sections */
+        .faq-section {
+            margin-bottom: 3rem;
+        }
+
+        .faq-section h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .faq-grid {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .faq-item {
+            background: var(--card-background);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px var(--shadow);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 4px 16px var(--shadow);
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 1.5rem;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .faq-question:hover {
+            background: var(--surface);
+        }
+
+        .faq-icon {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+            color: var(--primary-color);
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background: var(--surface);
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 1.5rem 1.5rem 1.5rem;
+            max-height: 500px;
+        }
+
+        .faq-answer p {
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .faq-answer ul {
+            margin: 0.5rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .faq-answer li {
+            margin-bottom: 0.25rem;
+            color: var(--text-primary);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: var(--primary-color);
+            color: white;
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .contact-section h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .contact-section a {
+            color: white;
+            font-weight: 600;
+            text-decoration: underline;
+        }
+
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .contact-method {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-method h4 {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--surface);
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .quick-links {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .contact-methods {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">
+                💊 DoseUp
+            </a>
+            <a href="index.html" class="back-link">← Back to Home</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <h1>Help & FAQ</h1>
+        <p class="subtitle">Find answers to common questions and learn how to get the most out of DoseUp</p>
+        
+        <!-- Search Section -->
+        <div class="search-section">
+            <h3>🔍 Search for Help</h3>
+            <p>Type your question or issue to find relevant answers</p>
+            <input type="text" class="search-box" placeholder="Search help articles..." id="searchBox">
+        </div>
+
+        <!-- Quick Links -->
+        <section>
+            <div class="quick-links">
+                <a href="#getting-started" class="quick-link">
+                    <span class="quick-link-icon">🚀</span>
+                    <h3>Getting Started</h3>
+                    <p>Set up your first medication and start tracking</p>
+                </a>
+                
+                <a href="#managing-medications" class="quick-link">
+                    <span class="quick-link-icon">💊</span>
+                    <h3>Managing Medications</h3>
+                    <p>Add, edit, and organize your medication schedule</p>
+                </a>
+                
+                <a href="#notifications" class="quick-link">
+                    <span class="quick-link-icon">🔔</span>
+                    <h3>Notifications & Reminders</h3>
+                    <p>Configure alerts and notification settings</p>
+                </a>
+                
+                <a href="#premium-features" class="quick-link">
+                    <span class="quick-link-icon">⭐</span>
+                    <h3>Premium Features</h3>
+                    <p>Learn about DoseUp Plus advanced features</p>
+                </a>
+                
+                <a href="#troubleshooting" class="quick-link">
+                    <span class="quick-link-icon">🛠️</span>
+                    <h3>Troubleshooting</h3>
+                    <p>Fix common issues and problems</p>
+                </a>
+                
+                <a href="#privacy-security" class="quick-link">
+                    <span class="quick-link-icon">🔐</span>
+                    <h3>Privacy & Security</h3>
+                    <p>Understand how your data is protected</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Getting Started -->
+        <section id="getting-started" class="faq-section">
+            <h2>🚀 Getting Started</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How do I add my first medication?
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Adding your first medication is easy:</p>
+                        <ul>
+                            <li>Open the DoseUp app</li>
+                            <li>Tap the "+" button on the Today screen or go to the Medications tab</li>
+                            <li>Enter your medication name (you can type or search from our database)</li>
+                            <li>Add the dosage (amount and unit, e.g., "10 mg")</li>
+                            <li>Set your reminder times for each day</li>
+                            <li>Add any notes or special instructions</li>
+                            <li>Tap "Save" to create your medication</li>
+                        </ul>
+                        <p>Your medication will now appear on your Today screen with scheduled reminders!</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Do I need to create an account to use DoseUp?
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>No account is required for basic features! DoseUp works immediately after download:</p>
+                        <ul>
+                            <li><strong>Free Features:</strong> Add up to 3 medications, set reminders, track basic adherence</li>
+                            <li><strong>Premium Features:</strong> Require subscription through Apple's App Store (no separate account needed)</li>
+                            <li><strong>Your Data:</strong> Stored locally on your device for maximum privacy</li>
+                            <li><strong>Cloud Sync:</strong> Premium users can optionally sync across devices using Apple ID</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How do I set up notifications?
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>DoseUp will ask for notification permission when you first open the app. If you need to enable them later:</p>
+                        <ul>
+                            <li>Go to iPhone Settings > DoseUp > Notifications</li>
+                            <li>Turn on "Allow Notifications"</li>
+                            <li>Choose your preferred alert style (Banners, Alerts, etc.)</li>
+                            <li>Enable sounds and badges if desired</li>
+                            <li>Return to DoseUp and verify notifications are working in Settings</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Managing Medications -->
+        <section id="managing-medications" class="faq-section">
+            <h2>💊 Managing Medications</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Can I set different reminder times for each day?
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! DoseUp supports flexible scheduling:</p>
+                        <ul>
+                            <li>When adding or editing a medication, tap on each day of the week</li>
+                            <li>Set custom times for each day (e.g., 8 AM on weekdays, 9 AM on weekends)</li>
+                            <li>Skip days entirely if you don't take the medication that day</li>
+                            <li>Set multiple doses per day with different intervals</li>
+                            <li>Use "Every X hours" for medications that need precise timing</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How do I edit or delete a medication?
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>To modify your medications:</p>
+                        <ul>
+                            <li><strong>Edit:</strong> Go to Medications tab, tap on the medication name, then tap "Edit"</li>
+                            <li><strong>Quick Edit:</strong> Long press on a medication in the Today view for quick options</li>
+                            <li><strong>Delete:</strong> In the medication details, scroll down and tap "Delete Medication"</li>
+                            <li><strong>Deactivate:</strong> Toggle off "Active" to pause without deleting history</li>
+                        </ul>
+                        <p><strong>Note:</strong> Deleting a medication removes all associated dose history. Consider deactivating instead if you might restart it later.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What happens if I miss a dose?
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>DoseUp helps you handle missed doses:</p>
+                        <ul>
+                            <li><strong>Visual Indication:</strong> Missed doses appear in red on your Today screen</li>
+                            <li><strong>Options:</strong> Mark as "Taken Late", "Skipped", or "Missed"</li>
+                            <li><strong>Late Doses:</strong> You can still mark doses as taken after the scheduled time</li>
+                            <li><strong>Analytics:</strong> Premium users see patterns in missed doses to improve adherence</li>
+                            <li><strong>Notifications:</strong> Overdue dose reminders (if enabled) will continue until marked</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How do I track "as needed" medications?
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>For PRN (as needed) medications:</p>
+                        <ul>
+                            <li>When adding the medication, select "As Needed" instead of setting fixed times</li>
+                            <li>The medication will appear on your Today screen without scheduled times</li>
+                            <li>Tap "Take Now" whenever you use the medication</li>
+                            <li>Set maximum daily limits to prevent overuse</li>
+                            <li>Track frequency and patterns in your analytics</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Notifications -->
+        <section id="notifications" class="faq-section">
+            <h2>🔔 Notifications & Reminders</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Why am I not receiving notifications?
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Check these common issues:</p>
+                        <ul>
+                            <li><strong>Permissions:</strong> Settings > DoseUp > Notifications must be enabled</li>
+                            <li><strong>Do Not Disturb:</strong> Check if DND is blocking notifications</li>
+                            <li><strong>Focus Modes:</strong> Ensure DoseUp is allowed in active Focus modes</li>
+                            <li><strong>Notification Style:</strong> Try changing from banners to alerts</li>
+                            <li><strong>Sounds:</strong> Enable notification sounds in DoseUp Settings</li>
+                            <li><strong>Background Refresh:</strong> Enable in Settings > General > Background App Refresh</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Can I customize notification sounds?
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, you can personalize your reminder sounds:</p>
+                        <ul>
+                            <li>Go to DoseUp Settings > Notifications</li>
+                            <li>Choose from built-in medication reminder sounds</li>
+                            <li>Select different sounds for different types of reminders</li>
+                            <li>Set vibration patterns for silent reminders</li>
+                            <li>Premium users can set custom sounds per medication</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How do I snooze a reminder?
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Snoozing reminders gives you extra time:</p>
+                        <ul>
+                            <li><strong>From Notification:</strong> Swipe and tap "Snooze" (default 15 minutes)</li>
+                            <li><strong>From App:</strong> Tap the snooze button next to any due medication</li>
+                            <li><strong>Custom Duration:</strong> Long press to choose 5, 10, 15, 30, or 60 minutes</li>
+                            <li><strong>Settings:</strong> Change default snooze duration in Settings</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Premium Features -->
+        <section id="premium-features" class="faq-section">
+            <h2>⭐ Premium Features</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What's included in DoseUp Plus?
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>DoseUp Plus unlocks powerful features:</p>
+                        <ul>
+                            <li><strong>Unlimited Medications:</strong> Add as many medications as needed</li>
+                            <li><strong>Advanced Analytics:</strong> Detailed charts, trends, and adherence insights</li>
+                            <li><strong>Intelligent Scheduling:</strong> Drug interaction warnings and optimal timing suggestions</li>
+                            <li><strong>Family Sharing:</strong> Share schedules with caregivers and family members</li>
+                            <li><strong>Data Export:</strong> Generate reports for doctors, export to HealthKit</li>
+                            <li><strong>Cloud Sync:</strong> Secure backup and sync across all your devices</li>
+                            <li><strong>Custom Themes:</strong> Personalize your app appearance</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How do I share my medication data with family?
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Family sharing helps caregivers stay informed (Premium feature):</p>
+                        <ul>
+                            <li>Go to Settings > Family Sharing</li>
+                            <li>Tap "Add Family Member" and enter their email</li>
+                            <li>Choose permission level: View Only, Notifications, or Full Access</li>
+                            <li>Send them the sharing invitation</li>
+                            <li>They'll receive access through the DoseUp app or email updates</li>
+                            <li>You can revoke access anytime</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How do I generate reports for my doctor?
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Create professional medical reports (Premium feature):</p>
+                        <ul>
+                            <li>Go to Analytics tab > Export Report</li>
+                            <li>Choose date range (last 30 days, 3 months, or custom)</li>
+                            <li>Select format: PDF for doctors, CSV for analysis</li>
+                            <li>Include adherence statistics, missed doses, and patterns</li>
+                            <li>Share via email, print, or save to Files</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How do I cancel my subscription?
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Subscriptions are managed through Apple:</p>
+                        <ul>
+                            <li>Go to iPhone Settings > Apple ID (your name at top)</li>
+                            <li>Tap "Subscriptions"</li>
+                            <li>Find "DoseUp Plus" and tap it</li>
+                            <li>Tap "Cancel Subscription"</li>
+                            <li>You'll keep premium features until the end of your billing period</li>
+                            <li>Your data remains safely stored and accessible</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Troubleshooting -->
+        <section id="troubleshooting" class="faq-section">
+            <h2>🛠️ Troubleshooting</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        The app is running slowly or crashing
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Try these troubleshooting steps:</p>
+                        <ul>
+                            <li><strong>Force Close:</strong> Double-tap home button, swipe up on DoseUp to close</li>
+                            <li><strong>Restart:</strong> Reopen the app</li>
+                            <li><strong>Restart Device:</strong> Turn your iPhone off and on</li>
+                            <li><strong>Update App:</strong> Check App Store for updates</li>
+                            <li><strong>Free Storage:</strong> Ensure you have at least 1GB free space</li>
+                            <li><strong>iOS Version:</strong> Update to the latest iOS version</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        My data disappeared after an update
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Don't panic - your data is likely still there:</p>
+                        <ul>
+                            <li><strong>First:</strong> Restart the app completely</li>
+                            <li><strong>Wait:</strong> Sometimes data takes a moment to load after updates</li>
+                            <li><strong>Check iCloud:</strong> If you had cloud sync enabled, data may need to re-sync</li>
+                            <li><strong>Premium Users:</strong> Go to Settings > Data Management > Restore from Backup</li>
+                            <li><strong>Still Missing:</strong> Contact support immediately with your device model and iOS version</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        I can't restore my premium subscription
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>To restore premium features:</p>
+                        <ul>
+                            <li>Go to Settings > Premium > Restore Purchase</li>
+                            <li>Sign in with the same Apple ID you used to purchase</li>
+                            <li>Wait for verification (this can take a few minutes)</li>
+                            <li>If it fails, restart the app and try again</li>
+                            <li>Check your Apple ID subscription status in iPhone Settings</li>
+                            <li>Contact Apple Support if the subscription isn't showing in Apple's system</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Privacy & Security -->
+        <section id="privacy-security" class="faq-section">
+            <h2>🔐 Privacy & Security</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Is my health information secure?
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Your privacy is our top priority:</p>
+                        <ul>
+                            <li><strong>Local Storage:</strong> All data stored securely on your device by default</li>
+                            <li><strong>No Tracking:</strong> We don't collect usage analytics or personal information</li>
+                            <li><strong>Encryption:</strong> Data is encrypted using iOS security features</li>
+                            <li><strong>Biometric Protection:</strong> Optional Face ID/Touch ID app lock</li>
+                            <li><strong>Cloud Sync:</strong> End-to-end encrypted when using premium cloud features</li>
+                        </ul>
+                        <p>Read our full <a href="privacy.html" style="color: var(--primary-color);">Privacy Policy</a> for details.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Can I export my data if I stop using DoseUp?
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, your data belongs to you:</p>
+                        <ul>
+                            <li><strong>Free Users:</strong> Basic export options available in Settings</li>
+                            <li><strong>Premium Users:</strong> Full data export in multiple formats (JSON, CSV, PDF)</li>
+                            <li><strong>What's Included:</strong> All medications, schedules, dose history, and settings</li>
+                            <li><strong>Format:</strong> Standard formats that work with other apps</li>
+                            <li><strong>When:</strong> Export anytime, even after canceling premium</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How do I delete all my data?
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>To completely remove your data:</p>
+                        <ul>
+                            <li><strong>Partial:</strong> Settings > Data Management > Clear All Data</li>
+                            <li><strong>Complete:</strong> Delete the app from your device</li>
+                            <li><strong>Cloud Data:</strong> Premium users should disable cloud sync first</li>
+                            <li><strong>Confirmation:</strong> This action cannot be undone</li>
+                            <li><strong>Recommendation:</strong> Export your data first as a backup</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <div class="contact-section">
+            <h3>Still Need Help?</h3>
+            <p>Our support team is here to help you get the most out of DoseUp.</p>
+            
+            <div class="contact-methods">
+                <div class="contact-method">
+                    <h4>📧 Email Support</h4>
+                    <p><a href="mailto:elaf.graphics@gmail.com">elaf.graphics@gmail.com</a></p>
+                    <p>We typically respond within 24 hours</p>
+                </div>
+                
+                <div class="contact-method">
+                    <h4>📱 In-App Support</h4>
+                    <p>Settings > Contact Support</p>
+                    <p>Automatically includes your device info</p>
+                </div>
+                
+                <div class="contact-method">
+                    <h4>🌐 Additional Resources</h4>
+                    <p><a href="medical-references.html">Medical References</a></p>
+                    <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="medical-references.html">Medical References</a>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.9rem;">
+                &copy; 2024 DoseUp. All rights reserved. | Here to help you stay healthy.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle Functionality
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+
+        // Search Functionality
+        const searchBox = document.getElementById('searchBox');
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        searchBox.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question').textContent.toLowerCase();
+                const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+                
+                if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                    item.style.display = 'block';
+                    if (searchTerm.length > 2) {
+                        item.classList.add('active');
+                    }
+                } else {
+                    item.style.display = searchTerm.length > 2 ? 'none' : 'block';
+                    item.classList.remove('active');
+                }
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
