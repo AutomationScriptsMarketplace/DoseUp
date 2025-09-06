@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - DoseUp</title>
+    <meta name="description" content="DoseUp Terms of Service - Read our terms and conditions for using the medication reminder app.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💊</text></svg>">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #007AFF;
+            --secondary-color: #5856D6;
+            --warning-color: #FF9500;
+            --error-color: #FF3B30;
+            --text-primary: #1C1C1E;
+            --text-secondary: #8E8E93;
+            --background: #FFFFFF;
+            --surface: #F2F2F7;
+            --card-background: #FFFFFF;
+            --shadow: rgba(0, 0, 0, 0.1);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --text-primary: #FFFFFF;
+                --text-secondary: #8E8E93;
+                --background: #000000;
+                --surface: #1C1C1E;
+                --card-background: #2C2C2E;
+                --shadow: rgba(255, 255, 255, 0.1);
+            }
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--background);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: var(--card-background);
+            box-shadow: 0 1px 3px var(--shadow);
+            padding: 1rem 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: var(--primary-color);
+        }
+
+        .back-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* Content */
+        main {
+            padding: 3rem 0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .last-updated {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--surface);
+        }
+
+        .intro {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: var(--surface);
+            border-radius: 12px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 2rem 0 1rem;
+            color: var(--text-primary);
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.5rem;
+            color: var(--text-primary);
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        ul, ol {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-box {
+            background: var(--surface);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+        }
+
+        .warning-box {
+            background: var(--warning-color);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+        }
+
+        .warning-box h3 {
+            color: white;
+            margin-top: 0;
+        }
+
+        .medical-disclaimer {
+            background: var(--error-color);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+
+        .medical-disclaimer h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info {
+            background: var(--primary-color);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .contact-info h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info a {
+            color: white;
+            font-weight: 600;
+        }
+
+        .terms-section {
+            background: var(--card-background);
+            border: 1px solid var(--surface);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 2px 8px var(--shadow);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--surface);
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">
+                💊 DoseUp
+            </a>
+            <a href="index.html" class="back-link">← Back to Home</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <h1>Terms of Service</h1>
+        <p class="last-updated">Last updated: January 2025</p>
+        
+        <div class="intro">
+            <strong>Welcome to DoseUp!</strong> These terms and conditions ("Terms") govern your use of our medication reminder application and related services. By downloading, installing, or using DoseUp, you agree to be bound by these Terms and our Privacy Policy.
+        </div>
+
+        <div class="medical-disclaimer">
+            <h3>⚠️ Important Medical Disclaimer</h3>
+            <p><strong>DoseUp is a medication reminder tool and is not intended to provide medical advice, diagnosis, or treatment.</strong> Always consult with qualified healthcare providers regarding your medical conditions and treatments. DoseUp supplements, but does not replace, professional medical care.</p>
+        </div>
+
+        <h2>1. Acceptance of Terms</h2>
+        <div class="terms-section">
+            <p>By accessing or using DoseUp, you agree to:</p>
+            <ul>
+                <li>Be bound by these Terms of Service</li>
+                <li>Comply with all applicable laws and regulations</li>
+                <li>Accept our Privacy Policy as part of this agreement</li>
+                <li>Use the app in accordance with its intended purpose</li>
+            </ul>
+            <p>If you do not agree to these terms, please do not use our app.</p>
+        </div>
+
+        <h2>2. Description of Service</h2>
+        <div class="terms-section">
+            <h3>DoseUp provides:</h3>
+            <ul>
+                <li><strong>Medication Reminders:</strong> Customizable notifications for your medication schedule</li>
+                <li><strong>Tracking Features:</strong> Adherence monitoring and progress analytics</li>
+                <li><strong>Data Management:</strong> Local and optional cloud storage of your medication information</li>
+                <li><strong>Reporting Tools:</strong> Generation of reports for healthcare providers (premium feature)</li>
+                <li><strong>Family Sharing:</strong> Ability to share medication schedules with caregivers (premium feature)</li>
+            </ul>
+        </div>
+
+        <h2>3. User Responsibilities</h2>
+        <div class="terms-section">
+            <h3>You are responsible for:</h3>
+            <ul>
+                <li><strong>Accurate Information:</strong> Entering correct medication names, dosages, and schedules</li>
+                <li><strong>Following Medical Advice:</strong> Adhering to your healthcare provider's instructions</li>
+                <li><strong>Device Security:</strong> Protecting your device and app data with appropriate security measures</li>
+                <li><strong>Account Management:</strong> Maintaining the confidentiality of your account information</li>
+                <li><strong>Compliance:</strong> Using the app in accordance with all applicable laws</li>
+            </ul>
+            
+            <div class="warning-box">
+                <h3>Critical Reminder</h3>
+                <p>DoseUp is a supplementary tool. Do not rely solely on the app for critical medication management. Always maintain backup reminder systems and consult healthcare professionals for medical decisions.</p>
+            </div>
+        </div>
+
+        <h2>4. Prohibited Uses</h2>
+        <div class="terms-section">
+            <p>You may not use DoseUp to:</p>
+            <ul>
+                <li>Violate any local, state, national, or international law</li>
+                <li>Share medication with others or use others' medication information</li>
+                <li>Attempt to reverse engineer, modify, or hack the app</li>
+                <li>Use the app for any commercial purpose without authorization</li>
+                <li>Upload malicious code or attempt to compromise app security</li>
+                <li>Impersonate others or provide false information</li>
+                <li>Use the app in a way that could harm or interfere with others' use</li>
+            </ul>
+        </div>
+
+        <h2>5. Privacy and Data Protection</h2>
+        <div class="terms-section">
+            <h3>Your Privacy Rights:</h3>
+            <ul>
+                <li><strong>Local Storage:</strong> By default, all data is stored locally on your device</li>
+                <li><strong>Optional Cloud Sync:</strong> Premium users can choose encrypted cloud synchronization</li>
+                <li><strong>Data Control:</strong> You maintain full control over your health information</li>
+                <li><strong>No Sharing:</strong> We don't share your personal health data with third parties</li>
+            </ul>
+            <p>For detailed information about how we handle your data, please review our <a href="privacy.html" style="color: var(--primary-color);">Privacy Policy</a>.</p>
+        </div>
+
+        <h2>6. Subscription and Payment Terms</h2>
+        <div class="terms-section">
+            <h3>DoseUp Plus Subscription:</h3>
+            <ul>
+                <li><strong>Subscription Options:</strong> Monthly and lifetime subscriptions available</li>
+                <li><strong>Payment Processing:</strong> All payments processed through Apple's App Store</li>
+                <li><strong>Auto-Renewal:</strong> Monthly subscriptions automatically renew unless cancelled</li>
+                <li><strong>Cancellation:</strong> Cancel anytime through your Apple ID subscription settings</li>
+                <li><strong>Refunds:</strong> Refund requests handled according to Apple's refund policy</li>
+            </ul>
+            
+            <h3>Premium Features Include:</h3>
+            <ul>
+                <li>Unlimited medications</li>
+                <li>Advanced analytics and insights</li>
+                <li>Intelligent scheduling optimization</li>
+                <li>Family sharing and caregiver access</li>
+                <li>Data export and HealthKit integration</li>
+                <li>Cloud synchronization across devices</li>
+            </ul>
+        </div>
+
+        <h2>7. Intellectual Property Rights</h2>
+        <div class="terms-section">
+            <p>DoseUp and all related content, features, and functionality are owned by us and are protected by international copyright, trademark, and other intellectual property laws.</p>
+            
+            <h3>You may not:</h3>
+            <ul>
+                <li>Copy, modify, or distribute the app or its content</li>
+                <li>Use our trademarks or branding without permission</li>
+                <li>Create derivative works based on DoseUp</li>
+                <li>Reverse engineer or attempt to extract source code</li>
+            </ul>
+        </div>
+
+        <h2>8. Limitations of Liability</h2>
+        <div class="terms-section">
+            <div class="warning-box">
+                <h3>Important Limitations</h3>
+                <p>While we strive for accuracy and reliability, we cannot guarantee uninterrupted service or complete accuracy of all features. We are not liable for:</p>
+            </div>
+            
+            <ul>
+                <li><strong>Medical Consequences:</strong> Any health issues resulting from medication management decisions</li>
+                <li><strong>Service Interruptions:</strong> Temporary unavailability of app features or notifications</li>
+                <li><strong>Data Loss:</strong> Loss of data due to device issues, user error, or technical problems</li>
+                <li><strong>Third-Party Services:</strong> Issues with Apple services, HealthKit, or other integrations</li>
+                <li><strong>User Error:</strong> Consequences of incorrect information entry or app misuse</li>
+            </ul>
+            
+            <p><strong>Maximum Liability:</strong> In any case, our total liability to you will not exceed the amount you paid for the app or subscription in the 12 months preceding the claim.</p>
+        </div>
+
+        <h2>9. Disclaimers</h2>
+        <div class="terms-section">
+            <h3>Medical Disclaimer</h3>
+            <p>DoseUp is provided for informational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition.</p>
+            
+            <h3>Service Disclaimer</h3>
+            <p>The app is provided "as is" and "as available" without warranties of any kind, either express or implied, including but not limited to implied warranties of merchantability, fitness for a particular purpose, or non-infringement.</p>
+        </div>
+
+        <h2>10. Indemnification</h2>
+        <div class="terms-section">
+            <p>You agree to indemnify and hold us harmless from any claims, damages, losses, or expenses arising from:</p>
+            <ul>
+                <li>Your use or misuse of the app</li>
+                <li>Your violation of these Terms</li>
+                <li>Your violation of any rights of a third party</li>
+                <li>Any content you submit or share through the app</li>
+            </ul>
+        </div>
+
+        <h2>11. Termination</h2>
+        <div class="terms-section">
+            <h3>We may terminate your access if:</h3>
+            <ul>
+                <li>You violate these Terms of Service</li>
+                <li>You use the app for prohibited purposes</li>
+                <li>We discontinue the service (with reasonable notice)</li>
+                <li>Required by law or regulation</li>
+            </ul>
+            
+            <h3>You may terminate by:</h3>
+            <ul>
+                <li>Uninstalling the app from your device</li>
+                <li>Cancelling your subscription through Apple</li>
+                <li>Contacting us to delete your account</li>
+            </ul>
+            
+            <p>Upon termination, your right to use the app ceases immediately, but these Terms will continue to apply to any past use.</p>
+        </div>
+
+        <h2>12. Changes to Terms</h2>
+        <div class="terms-section">
+            <p>We may update these Terms to reflect:</p>
+            <ul>
+                <li>Changes in our services or business practices</li>
+                <li>Legal or regulatory requirements</li>
+                <li>Security or operational improvements</li>
+            </ul>
+            
+            <p>We will notify you of significant changes through:</p>
+            <ul>
+                <li>In-app notifications</li>
+                <li>Email notifications (if provided)</li>
+                <li>Updates to this page with revised dates</li>
+            </ul>
+            
+            <p>Continued use of the app after changes constitutes acceptance of the new Terms.</p>
+        </div>
+
+        <h2>13. Governing Law</h2>
+        <div class="terms-section">
+            <p>These Terms are governed by the laws of the jurisdiction where our company is registered, without regard to conflict of law principles. Any disputes will be resolved through binding arbitration or in the courts of competent jurisdiction.</p>
+        </div>
+
+        <h2>14. Severability</h2>
+        <div class="terms-section">
+            <p>If any provision of these Terms is found to be unenforceable or invalid, that provision will be limited or eliminated to the minimum extent necessary so that the remaining Terms remain in full force and effect.</p>
+        </div>
+
+        <h2>15. Accessibility</h2>
+        <div class="terms-section">
+            <p>We are committed to making DoseUp accessible to users with disabilities. The app includes features such as:</p>
+            <ul>
+                <li>VoiceOver compatibility</li>
+                <li>Dynamic Type support</li>
+                <li>High contrast mode</li>
+                <li>Voice control integration</li>
+            </ul>
+            <p>If you encounter accessibility issues, please contact us so we can address them promptly.</p>
+        </div>
+
+        <div class="contact-info">
+            <h3>Questions About These Terms?</h3>
+            <p>We're here to help clarify any questions you have about our Terms of Service.</p>
+            <p>Email us at: <a href="mailto:elaf.graphics@gmail.com">elaf.graphics@gmail.com</a></p>
+            <p>We typically respond within 24-48 hours.</p>
+        </div>
+
+        <div class="highlight-box">
+            <p><strong>Thank you for choosing DoseUp!</strong> These Terms are designed to protect both you and us while ensuring you have the best possible experience with our medication management app. Your health and privacy are our top priorities.</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="help.html">Help & FAQ</a>
+                <a href="medical-references.html">Medical References</a>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.9rem;">
+                &copy; 2024 DoseUp. All rights reserved. | Terms subject to change with notice.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
